@@ -75,3 +75,40 @@ Thêm thư mục bin vào PATH
 Kiểm tra:
 
 ffmpeg -version
+
+🧊 Build file thành ứng dụng .exe
+1️⃣ Cài PyInstaller
+pip install pyinstaller
+
+2️⃣ Build ứng dụng TTS (tts_app.py)
+
+Ứng dụng này KHÔNG cần FFmpeg và được khuyến nghị để build ra file .exe.
+
+pyinstaller --onefile --windowed tts_app.py
+
+Giải thích các tham số:
+
+--onefile → gộp toàn bộ thành một file .exe duy nhất
+
+--windowed → ẩn cửa sổ console (dành cho ứng dụng giao diện)
+
+3️⃣ Vị trí file output
+
+Sau khi build xong, file .exe sẽ nằm tại:
+
+dist/tts_app.exe
+
+
+👉 Bạn chỉ cần phân phối file trong thư mục dist.
+
+4️⃣ Chạy ứng dụng
+
+Double-click tts_app.exe
+
+Nhập nội dung văn bản
+
+Bấm Download MP3
+
+File âm thanh sẽ được lưu tại:
+
+AmThanh_Output/

@@ -74,3 +74,40 @@ Add the bin folder to PATH
 Verify installation:
 
 ffmpeg -version
+
+-- Build file to app .exe
+1️⃣ Install PyInstaller
+pip install pyinstaller
+
+2️⃣ Build the TTS app (tts_app.py)
+
+This app does NOT require FFmpeg and is recommended for .exe distribution.
+
+pyinstaller --onefile --windowed tts_app.py
+
+Flags explained:
+
+--onefile → bundle everything into a single .exe
+
+--windowed → hide the console window (GUI app)
+
+3️⃣ Output location
+
+After the build completes, the executable will be located at:
+
+dist/tts_app.exe
+
+
+You only need to distribute the file inside the dist folder.
+
+4️⃣ Run the executable
+
+Double-click tts_app.exe
+
+Enter text
+
+Click Download MP3
+
+Output files will be saved to:
+
+AmThanh_Output/

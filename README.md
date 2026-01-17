@@ -12,7 +12,7 @@ gTTS/
 ├── requirements.txt
 └── README.md
 
-1️⃣ tts_app.py – Generate MP3 Audio (NO FFmpeg Required)
+1️⃣ only_gtts.py – Generate MP3 Audio (NO FFmpeg Required)
 ✔ Features
 
 Convert text input into multiple .mp3 files
@@ -29,9 +29,10 @@ No pydub used → FFmpeg is NOT required
 
 ✔ Required Libraries
 pip install gtts PyQt6
+pip install -r requirements.txt
 
 ▶ Run the app
-python tts_app.py
+python only_gtts.py
 
 📁 Output
 
@@ -39,7 +40,7 @@ Generated MP3 files will be saved in:
 
 AmThanh_Output/
 
-2️⃣ video_audio_merger.py – Merge Audio into Video (FFmpeg REQUIRED)
+2️⃣ merge.py – Merge Audio into Video (FFmpeg REQUIRED)
 
 ⚠️ This file does NOT use gTTS
 👉 It is only used to merge existing .mp3 audio into multiple .mp4 videos.
@@ -79,11 +80,11 @@ ffmpeg -version
 1️⃣ Install PyInstaller
 pip install pyinstaller
 
-2️⃣ Build the TTS app (tts_app.py)
+2️⃣ Build the TTS app (only_gtts.py)
 
 This app does NOT require FFmpeg and is recommended for .exe distribution.
 
-pyinstaller --onefile --windowed tts_app.py
+pyinstaller --onefile --windowed only_gtts.py
 
 Flags explained:
 
@@ -95,14 +96,14 @@ Flags explained:
 
 After the build completes, the executable will be located at:
 
-dist/tts_app.exe
+dist/only_gtts.exe
 
 
 You only need to distribute the file inside the dist folder.
 
 4️⃣ Run the executable
 
-Double-click tts_app.exe
+Double-click only_gtts.exe
 
 Enter text
 

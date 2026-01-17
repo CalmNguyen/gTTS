@@ -12,7 +12,7 @@ gTTS/
 ├── requirements.txt
 └── README.md
 
-1️⃣ File tts_app.py – Tạo Audio MP3 (KHÔNG cần FFmpeg)
+1️⃣ File only_gtts.py – Tạo Audio MP3 (KHÔNG cần FFmpeg)
 ✔ Chức năng
 
 Nhập văn bản → xuất nhiều file .mp3
@@ -29,9 +29,10 @@ Không dùng pydub → không cần FFmpeg
 
 ✔ Thư viện sử dụng
 pip install gtts PyQt6
+pip install -r requirements.txt
 
 ✔ Chạy chương trình
-python tts_app.py
+python only_gtts.py
 
 📁 Output
 
@@ -39,7 +40,7 @@ File MP3 được lưu trong thư mục:
 
 AmThanh_Output/
 
-2️⃣ File video_audio_merger.py – Ghép Audio vào Video (BẮT BUỘC FFmpeg)
+2️⃣ File merge.py – Ghép Audio vào Video (BẮT BUỘC FFmpeg)
 
 ⚠️ File này KHÔNG dùng gTTS
 👉 Chỉ dùng để ghép file MP3 có sẵn vào nhiều video MP4
@@ -80,11 +81,11 @@ ffmpeg -version
 1️⃣ Cài PyInstaller
 pip install pyinstaller
 
-2️⃣ Build ứng dụng TTS (tts_app.py)
+2️⃣ Build ứng dụng TTS (only_gtts.py)
 
 Ứng dụng này KHÔNG cần FFmpeg và được khuyến nghị để build ra file .exe.
 
-pyinstaller --onefile --windowed tts_app.py
+pyinstaller --onefile --windowed only_gtts.py
 
 Giải thích các tham số:
 
@@ -96,14 +97,14 @@ Giải thích các tham số:
 
 Sau khi build xong, file .exe sẽ nằm tại:
 
-dist/tts_app.exe
+dist/only_gtts.exe
 
 
 👉 Bạn chỉ cần phân phối file trong thư mục dist.
 
 4️⃣ Chạy ứng dụng
 
-Double-click tts_app.exe
+Double-click only_gtts.exe
 
 Nhập nội dung văn bản
 
